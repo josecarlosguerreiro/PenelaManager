@@ -173,6 +173,22 @@ def page_equipas():
     cnx.close()
     return render_template('equipas.html', data=data)
 
+@app.route('/addTreino')
+def page_addTreinos():
+
+    cnx = connection()
+    cursor = cnx.cursor()
+    query_string = "SELECT * FROM equipa"
+    cursor.execute(query_string)
+    data = cursor.fetchall()
+    for row in data:
+        print('===============================================')
+        print('nome', row[1])
+        print('campo   :', row[2])
+        print('===============================================')
+
+    cnx.close()
+    return render_template('addTreino.html', data=data)
 
 def connection():
     try:

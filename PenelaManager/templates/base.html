@@ -30,6 +30,13 @@
     <ul class="nav nav-tabs justify-content-end fixed-top nav-color" >
       <li class="nav-item">
         <a class="nav-link" href="/base">Inicio</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" type="button" href="#">Treinos</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Ver treinos</a>
+                  <a class="dropdown-item" href="/addTreino">Adicionar Treinos</a>
+                </div>
+        </li>
       </li>
         {% if session['username'] %}
       <li class="nav-item dropdown">
@@ -37,7 +44,7 @@
         {% endif %}
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#">Alterar Password</a>
-          <a class="dropdown-item" href="#">Logout</a>
+          <a class="dropdown-item" href="/logout">Logout</a>
         </div>
       </li>
     </ul>
