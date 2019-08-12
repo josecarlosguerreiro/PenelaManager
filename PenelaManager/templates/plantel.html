@@ -1,0 +1,121 @@
+{%extends 'base.html' %}
+
+{%block head%}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+  <h1>Responsive Columns</h1>
+  <p>Resize the browser window to see the effect.</p>
+  <p>The columns will automatically stack on top of each other when the screen is less than 576px wide.</p>
+
+    <div class="row" >
+      <div class="col-sm-4">
+        <img class="foto img-fluid" src="{{ url_for('static', filename='images/jogadores/ze.jpg') }}">
+      </div>
+      <div class="col-sm-4">
+          <table class="table table-striped">
+            <tbody>
+            <tr>
+              <td>Nome: José Guerreiro</td>
+            </tr>
+            <tr>
+              <td>Posição: Guarda-Redes</td>
+            </tr>
+            <tr>
+              <td>Telemovel: 918456857</tr>
+            </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class="col-sm-4">
+        <table class="table table-striped">
+            <tbody>
+            <tr>
+              <td>Golos: 15</td>
+            </tr>
+            <tr>
+              <td>Cartões Amarelos: 11</td>
+            </tr>
+            <tr>
+              <td>Cartões Vermelhos:21</tr>
+            </tr>
+            <tr>
+              <td>Minutos: 190</tr>
+            </tr>
+            </tbody>
+          </table>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <img class="foto img-fluid" src="{{ url_for('static', filename='images/jogadores/nelson.jpg') }}">
+
+    </div>
+    <div class="col-sm-4">
+        <table class="table table-striped">
+          <tbody>
+          <tr>
+            <td>Nome: José Guerreiro</td>
+          </tr>
+          <tr>
+            <td>Posição: Guarda-Redes</td>
+          </tr>
+          <tr>
+            <td>Telemovel: 918456857</tr>
+          </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="col-sm-4">
+      <table class="table table-striped">
+          <tbody>
+          <tr>
+            <td>Golos: 15</td>
+          </tr>
+          <tr>
+            <td>Cartões Amarelos: 11</td>
+          </tr>
+          <tr>
+            <td>Cartões Vermelhos:21</tr>
+          </tr>
+          <tr>
+            <td>Minutos: 190</tr>
+          </tr>
+          </tbody>
+        </table>
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}
+
+<!--
+<div class="container">
+  <h2>Plantel 2018/19</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Posição</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for jog in data %}
+      <tr>
+        <td>{{ jog[1] }}</td>
+        <td>{{ jog[5] }}</td>
+
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+-->
+
+
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <title>Grupo Desportivo de Penela - Gestão de Equipa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!--
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome-4.3.0/css/font-awesome.min.css') }}">
+    <!--
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+    -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+
+	{% block head %}{% endblock%}
+
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+  <ul class="nav nav-tabs justify-content-end fixed-top">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Inicio</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Penela</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Sede</a>
+          <a class="dropdown-item" href="#">Direção</a>
+          <a class="dropdown-item" href="/plantel">Plantel</a>
+          <a class="dropdown-item" href="/calendario" >Calendário</a>
+          <a class="dropdown-item" href="#">Palmarés</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contactos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+   </ul>
+
+
+
+
+  <div id="carousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+
+      </ol>
+      <div class="carousel-inner" role="listbox">
+
+        <div class="carousel-item active">
+          <div class="img">
+              <img class="d-block img-fluid" src="{{ url_for('static', filename='images/sede1.jpg') }}" >
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img">
+              <img class="d-block img-fluid" src="{{ url_for('static', filename='images/sede2.jpg') }}">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img">
+              <img class="d-block img-fluid" src="{{ url_for('static', filename='images/sede3.jpg') }}">
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="main">
+    <div class="container">
+      <div id="cta">
+          <a class="btn btn-primary rounded">Grupo Desportivo Penela</a>
+          <p>#Raça #Querer #Ambição</p>
+      </div>
+
+
+
+      <div class="row">
+        <div class="text-box col-md-offset-1 col-sm-12">
+          <h2>Sobre a nossa Sede</h2>
+          <p> A 4 de Novembro de 2018, foi inaugurada a sede oficial, o primeiro espaço que o clube tem à sua disposição,
+            para poder realizar reuniões e concentrar os seus directores, técnicos, jogadores, sócios e adeptos.
+            O Grupo Desportivo de Penela tem agora um espaço próprio para poder reunir o seu material de trabalho,
+            mas também o nosso palmarés, entre os quais se encontram as taças de Campeão do Campeonato Amador do Vale
+            do Cávado das épocas 2017/18 e 2018/19. Esta nova sede, o primeiro espaço próprio que o clube tem, tem como
+            objetivo poder realizar as reuniões da direção e juntar num mesmo espaço, diretores, técnicos, jogadores,
+            sócios e adeptos.
+            Por fim, o Grupo Desportivo de Penela gostaria de agradecer á junta de Freguesia de Adaúfe pela cedência do
+            espaço.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <div class="container-fluid">
+      <h1>Onde estamos</h1>
+      <div class="row">
+        <div class="col-sm-4">
+            <h3>Morada</h3>
+            <p>Av. Imac. Conceição 135, 4710-820 Adaúfe, Braga</p>
+        </div>
+        <div class="col-sm-8">
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe width="700" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Av.%20Imac.%20Concei%C3%A7%C3%A3o%20136%2C%204710-820%20Ada%C3%BAfe&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                    </iframe>
+                    <a href="https://www.maps-erstellen.de"></a>
+                </div>
+                <style>.mapouter{position:relative;text-align:right;height:500px;width:700px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:700px;}</style>
+            </div>
+        </div>
+      </div>
+  </div>
+
+{% block body %}
+
+{% endblock %}
+
+</body>

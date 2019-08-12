@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <title>Grupo Desportivo de Penela - Gestão de Equipa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!--
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome-4.3.0/css/font-awesome.min.css') }}">
+    <!--
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+    -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	{% block head %}{% endblock%}
+
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    <ul class="nav nav-tabs justify-content-end fixed-top nav-color" >
+      <li class="nav-item">
+        <a class="nav-link" href="/base">Inicio</a>
+      </li>
+        {% if session['username'] %}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" type="button" href="#">Olá {{ session['username'] }}</a>
+        {% endif %}
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Alterar Password</a>
+          <a class="dropdown-item" href="#">Logout</a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="col-sm-2 no-padding"  style="position:fixed; top:50px; z-index:1">
+    <div class="sidebar-nav" style="height: 100%;">
+      <div class="navbar navbar-default" role="navigation" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px; ">
+        <div class="navbar-collapse collapse sidebar-navbar-collapse" style="background-color: rgba(0,0,0,.03) !important; border: 1px solid rgba(0,0,0,.125);border-top: 0px solid;" id="menu"> <!--style="background-color: #EFEFEF;"-->
+          <ul class="nav navbar-nav" id="menus">
+
+           <li>
+            <a href="#" >titulo<span class="glyphicon glyphicon-chevron-right" style="float:right;padding-right: 10px;"></span></a>
+            <a>titulo
+                    <span class="glyphicon glyphicon-chevron-down" style="float:right;padding-right: 10px;"></span>
+            </a>
+             <ul class="nav navbar-nav" id="subMenus" style="padding-inline-start:0px">
+              <li>
+                  <a  href="#"  style="padding-left:50px">titulo submenu
+                      <span class="glyphicon glyphicon-chevron-right" style="float:right;padding-right: 10px;"></span>
+                  </a>
+              </li>
+
+            </ul>
+
+            </li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+{% block body %}
+
+
+{% endblock%}
+
+
+</body>
