@@ -30,13 +30,20 @@
     <ul class="nav nav-tabs justify-content-end fixed-top nav-color" >
       <li class="nav-item">
         <a class="nav-link" href="/base">Inicio</a>
-        <li class="nav-item dropdown">
+      </li>
+      <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" type="button" href="#">Plantel</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/plantel">Ver plantel</a>
+                  <a class="dropdown-item" href="#">Adicionar Jogador</a>
+                </div>
+      </li>
+      <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" type="button" href="#">Treinos</a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="#">Ver treinos</a>
                   <a class="dropdown-item" href="/addTreino">Adicionar Treinos</a>
                 </div>
-        </li>
       </li>
         {% if session['username'] %}
       <li class="nav-item dropdown">
@@ -49,34 +56,8 @@
       </li>
     </ul>
 
-    <div class="col-sm-2 no-padding"  style="position:fixed; top:50px; z-index:1">
-    <div class="sidebar-nav" style="height: 100%;">
-      <div class="navbar navbar-default" role="navigation" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px; ">
-        <div class="navbar-collapse collapse sidebar-navbar-collapse" style="background-color: rgba(0,0,0,.03) !important; border: 1px solid rgba(0,0,0,.125);border-top: 0px solid;" id="menu"> <!--style="background-color: #EFEFEF;"-->
-          <ul class="nav navbar-nav" id="menus">
 
-           <li>
-            <a href="#" >titulo<span class="glyphicon glyphicon-chevron-right" style="float:right;padding-right: 10px;"></span></a>
-            <a>titulo
-                    <span class="glyphicon glyphicon-chevron-down" style="float:right;padding-right: 10px;"></span>
-            </a>
-             <ul class="nav navbar-nav" id="subMenus" style="padding-inline-start:0px">
-              <li>
-                  <a  href="#"  style="padding-left:50px">titulo submenu
-                      <span class="glyphicon glyphicon-chevron-right" style="float:right;padding-right: 10px;"></span>
-                  </a>
-              </li>
 
-            </ul>
-
-            </li>
-
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-  </div>
-</div>
 
 
 

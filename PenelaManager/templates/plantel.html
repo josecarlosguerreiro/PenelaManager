@@ -6,90 +6,44 @@
 
 {% block body %}
 
-<div class="container-fluid">
-  <h1>Responsive Columns</h1>
-  <p>Resize the browser window to see the effect.</p>
-  <p>The columns will automatically stack on top of each other when the screen is less than 576px wide.</p>
+<div class="table-responsive" style="padding: 40px">
+    <table class="table table-hover">
 
-    <div class="row" >
-      <div class="col-sm-4">
-        <img class="foto img-fluid" src="{{ url_for('static', filename='images/jogadores/ze.jpg') }}">
-      </div>
-      <div class="col-sm-4">
-          <table class="table table-striped">
-            <tbody>
-            <tr>
-              <td>Nome: José Guerreiro</td>
-            </tr>
-            <tr>
-              <td>Posição: Guarda-Redes</td>
-            </tr>
-            <tr>
-              <td>Telemovel: 918456857</tr>
-            </tr>
-            </tbody>
-          </table>
-      </div>
-      <div class="col-sm-4">
-        <table class="table table-striped">
-            <tbody>
-            <tr>
-              <td>Golos: 15</td>
-            </tr>
-            <tr>
-              <td>Cartões Amarelos: 11</td>
-            </tr>
-            <tr>
-              <td>Cartões Vermelhos:21</tr>
-            </tr>
-            <tr>
-              <td>Minutos: 190</tr>
-            </tr>
-            </tbody>
-          </table>
-      </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <img class="foto img-fluid" src="{{ url_for('static', filename='images/jogadores/nelson.jpg') }}">
+    <!--Table head-->
+    <thead>
+      <tr>
+        <th>Numero</th>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Posicao</th>
+        <th>Contacto</th>
+        <th>Jogos</th>
+        <th>Jogos Titular</th>
+        <th>Jogos Suplente</th>
+        <th>Minutos Jogados</th>
+        <th>Golos</th>
+      </tr>
+    </thead>
+    <!--Table head-->
+    <!--Table body-->
+    <tbody>
+      {%for jog in data %}
+      <tr>
+          <td>Numero</td>
+          <td>{{ jog[1]}}</td>
+          <td>-</td>
+          <td>{{ jog[5] }}</td>
+          <td>-</td>
+          <td>Jogos</td>
+          <td>Jogos Titular</td>
+          <td>Jogos Suplente</td>
+          <td>Minutos Jogados</td>
+          <td>Golos</td>
+      </tr>
+      {%endfor%}
 
-    </div>
-    <div class="col-sm-4">
-        <table class="table table-striped">
-          <tbody>
-          <tr>
-            <td>Nome: José Guerreiro</td>
-          </tr>
-          <tr>
-            <td>Posição: Guarda-Redes</td>
-          </tr>
-          <tr>
-            <td>Telemovel: 918456857</tr>
-          </tr>
-          </tbody>
-        </table>
-    </div>
-    <div class="col-sm-4">
-      <table class="table table-striped">
-          <tbody>
-          <tr>
-            <td>Golos: 15</td>
-          </tr>
-          <tr>
-            <td>Cartões Amarelos: 11</td>
-          </tr>
-          <tr>
-            <td>Cartões Vermelhos:21</tr>
-          </tr>
-          <tr>
-            <td>Minutos: 190</tr>
-          </tr>
-          </tbody>
-        </table>
-    </div>
 
-  </div>
-</div>
+    <!--Table body-->
 
 
 {% endblock %}
