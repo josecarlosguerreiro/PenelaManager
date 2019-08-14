@@ -128,6 +128,15 @@ body {
     right: auto;
 }
 
-.menuLateral{
-    background:green;
+.menu_lateral{
+    background:#33cc00;
+}
+
+.addTreino{
+    height: 300px;
+    width: 100%;
+}
+
+.treino_form{
+    padding-top:20px;
 }
