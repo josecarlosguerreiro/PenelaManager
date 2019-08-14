@@ -27,47 +27,43 @@
 
 </head>
 <body>
-    <ul class="nav nav-tabs justify-content-end fixed-top nav-color" >
-      <li class="nav-item">
-        <a class="nav-link" href="/base">Inicio</a>
-      </li>
-      <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" type="button" href="#">Plantel</a>
+<div class="row menu_lateral">
+  <div class="col-sm-2">
+    <div class="navbar navbar-inverse navbar-fixed-left">
+      <ul class="nav navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/base">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Plantel</a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="/plantel">Ver plantel</a>
                   <a class="dropdown-item" href="#">Adicionar Jogador</a>
                 </div>
-      </li>
-      <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" type="button" href="#">Treinos</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown"href="#">Treinos</a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="#">Ver treinos</a>
                   <a class="dropdown-item" href="/addTreino">Adicionar Treinos</a>
                 </div>
-      </li>
-        {% if session['username'] %}
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" type="button" href="#">Olá {{ session['username'] }}</a>
-        {% endif %}
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Alterar Password</a>
-          <a class="dropdown-item" href="/logout">Logout</a>
-        </div>
-      </li>
-    </ul>
-
-
-
-
-
-
-
-
-
-{% block body %}
-
-
-{% endblock%}
-
+          </li>
+            {% if session['username'] %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Configuracao</a>
+            {% endif %}
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Alterar Password</a>
+              <a class="dropdown-item" href="/logout">Logout</a>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+  <div class="col-sm-9">
+      {% block body %}
+      {% endblock%}
+  </div>
+</div>
 
 </body>

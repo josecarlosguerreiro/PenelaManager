@@ -127,3 +127,7 @@ body {
 .navbar.fixed-left {
     right: auto;
 }
+
+.menuLateral{
+    background:green;
+}
