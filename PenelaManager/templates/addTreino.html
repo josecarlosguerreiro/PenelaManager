@@ -7,41 +7,45 @@
 {% block body %}
 <div class="addTreino">
     <img class="addTreino" src="{{ url_for('static', filename='images/treino.jpeg') }}"/>
-    <form class="treino_form">
+    <form class="treino_form" method="post">
       <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
+          <label>Epoca</label>
+          <select name="inputEpoca" id="inputEpoca" class="form-control">
+            <option selected>2019-2020</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
           <label>Tipo de Treino</label>
-          <select id="inputState" class="form-control">
+          <select name="tipotreino" id="tipotreino" class="form-control">
             <option selected>Conjunto</option>
             <option>Jogo Treino</option>
           </select>
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
           <label>Data e hora</label>
-          <div class="input-append date form_datetime5" data-picker-position="bottom-left">
-            <input size="16" value="" readonly="" type="text">
+          <div class="input-append date form_datetime" data-picker-position="bottom-left">
+            <input name="datahora" size="16" value="" readonly="" type="text" id="datepicker">
             <span class="add-on"><i class="glyphicon glyphicon-calendar"></i></span>
             </div>
-          <script type="text/javascript">
-            $(".form_datetime").datetimepicker({
-                format: "dd MM yyyy - hh:ii",
-                autoclose: true,
-                todayBtn: true,
-                pickerPosition: "bottom-left"
-            });
-          </script>
+            <script>
+              $( function() {
+                $( "#datepicker" ).datepicker();
+              } );
+            </script>
         </div>
       </div>
       <div class="form-group">
         <label for="inputlocaltreino">Local do Treino</label>
-        <input type="text" class="form-control" id="inputLocalTreino">
+        <input name="inputLocaltreino" type="text" class="form-control" id="inputLocaltreino">
       </div>
       <div class="form-group">
         <label for="comment">Comentarios sobre o treino:</label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
+        <textarea name="comentario" class="form-control" rows="5" id="comment"></textarea>
       </div>
       <div class="form-group">
         <button type="button" class="btn btn-primary btn-md">Gravar Treino</button>
+        <input type="submit" value="Save">
       </div>
 
     </form>

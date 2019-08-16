@@ -17,8 +17,8 @@ def home():
     data = proxjogo()
     return render_template('index.html', data =data)
 
-@app.route('/base', methods=['GET', 'POST'])
 
+@app.route('/base', methods=['GET', 'POST'])
 def base():
 
     is_user_loggedin = session['username']
@@ -65,7 +65,6 @@ def logout():
     session.pop('username', None)
     # Redirect to login page
     return redirect('/')
-
 
 
 # this will be the registration page, we need to use both GET and POST requests
@@ -153,7 +152,7 @@ def page_plantel():
         print('===============================================')
 
     cnx.close()
-    return render_template('plantel.html',data=data)
+    return render_template('plantel.html', data=data)
 
 
 @app.route('/equipas')
@@ -173,22 +172,44 @@ def page_equipas():
     cnx.close()
     return render_template('equipas.html', data=data)
 
-@app.route('/addTreino')
-def page_addTreinos():
-
+@app.route('/vertreinos', methods=['GET','POST'])
+def page_vertreino():
     cnx = connection()
     cursor = cnx.cursor()
-    query_string = "SELECT * FROM equipa"
+    query_string = "select * from view_vertreinos"
     cursor.execute(query_string)
     data = cursor.fetchall()
-    for row in data:
-        print('===============================================')
-        print('nome', row[1])
-        print('campo   :', row[2])
-        print('===============================================')
-
+    cursor.close()
     cnx.close()
-    return render_template('addTreino.html', data=data)
+    for dt in data:
+        print(dt)
+    return render_template('verTreino.html', data=data)
+
+@app.route('/addTreino', methods=['GET', 'POST'])
+def page_addTreinos():
+    if request.method == 'POST':
+        epoca = request.form['inputEpoca']
+        meteo = 'Sol'
+        tipotreino = request.form['tipotreino']
+        datahora = request.form['datahora']
+        localtreino = request.form['inputLocaltreino']
+        comentario = request.form['comentario']
+        print('EPOCA ----->', epoca)
+        print('tipotreino ----->', tipotreino)
+        print('datahora ----->', datahora)
+        print('localtreino ----->', localtreino)
+        print('comentario ----->', comentario)
+        print('username ---> ', session['username'])
+
+        cnx = connection()
+        cursor = cnx.cursor()
+        cursor.callproc('inserir_treino', [epoca, meteo, tipotreino, localtreino, datahora, comentario, session['username']])
+        cnx.commit()
+        cursor.close()
+        cnx.close()
+
+
+    return render_template('addTreino.html')
 
 def connection():
     try:
