@@ -183,6 +183,12 @@ def page_vertreino():
     cnx.close()
     for dt in data:
         print(dt)
+    if request.method == "POST":
+            treino = request.form.to_dict(flat=False)
+            print('Carregas-te no botao ver mais!!!!!')
+            print('id do treino -->', treino.items())
+            print('teste -->', treino.keys())
+
     return render_template('verTreino.html', data=data)
 
 @app.route('/addTreino', methods=['GET', 'POST'])
