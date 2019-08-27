@@ -17,16 +17,17 @@
           </select>
         </div>
       </div>
-    </form>
+
     <div class="table-responsive">
         <table class="table table-striped">
           <thead>
             <tr>
               <th scope="col">Epoca</th>
-              <th scope="col">Tipo de Treino</th>jose
+              <th scope="col">Tipo de Treino</th>
               <th scope="col">Metereologia</th>
               <th scope="col">Local</th>
               <th scope="col">Data</th>
+              <th scope="col">Comentarios</th>
             </tr>
           </thead>
           <tbody>
@@ -37,17 +38,43 @@
                 <td>{{ treino[2] }}</td>
                 <td>{{ treino[6] }}</td>
                 <td>{{ treino[7] }}</td>
-                <td>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse">Ver mais</button>
-                    <div id="collapse1" class="panel-collapse collapse">
-                        <div class="panel-body">Panel Body</div>
-                    </div>
-                </td>
-
+                <td>{{ treino[4] }}</td>
             </tr>
             {% endfor %}
           </tbody>
         </table>
     </div>
+    <div class="presentes">Lista de jogadores:</label>
+        <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Jogador</th>
+                  <th scope="col">Presente</th>
+                  <th scope="col">Motivo/Comentario ao treino</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for jog in listaj %}
+                <tr>
+                    <td>{{ jog[2] }}</td>
+                    <td>
+                         <input type="checkbox" class="form-check-input" name="check">
+                    </td>
+                    <td>
+                        <textarea class="form-control" rows="2" id="comment"></textarea>
+                    </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+        <div class="form-group">
+        <button type="button" class="btn btn-primary btn-md">Gravar Treino</button>
+        <input type="submit" value="Save">
+      </div>
+    </div>
+    </form>
 </div>
+
 {% endblock%}

@@ -179,17 +179,35 @@ def page_vertreino():
     query_string = "select * from view_vertreinos"
     cursor.execute(query_string)
     data = cursor.fetchall()
-    cursor.close()
-    cnx.close()
-    for dt in data:
-        print(dt)
-    if request.method == "POST":
-            treino = request.form.to_dict(flat=False)
-            print('Carregas-te no botao ver mais!!!!!')
-            print('id do treino -->', treino.items())
-            print('teste -->', treino.keys())
 
-    return render_template('verTreino.html', data=data)
+    if request.method == "POST":
+        treino = request.form.to_dict(flat=False)
+        treino = treino.keys()
+        listaTreino = list(treino)[0]
+        idtreino = listaTreino[1]
+        cursor.execute('SELECT * FROM view_vertreinos where id_treino = %s;', [idtreino])
+        treinos=cursor.fetchall()
+        cursor.execute('SELECT * FROM jogador')
+        lista_jogador = cursor.fetchall()
+
+        cursor.close()
+        phase = request.form.get('check')
+        rphase = phase.replace("on", "1")
+        print("Checkbox test: {phase} | {rphase}")
+        return render_template('verTreinoPromenor.html', data=treinos, listaj=lista_jogador)
+    else:
+        return render_template('verTreino.html', data=data)
+
+
+@app.route('/treinocompleto', methods=['GET', 'POST'])
+def page_treino_completo(idtreino, lista_jogador):
+    cnx = connection()
+    cur = cnx.cursor()
+    cur.execute('SELECT * FROM view_vertreinos where id_treino = %s;', [idtreino])
+    data = cur.fetchall()
+
+
+    return render_template('verTreinoPromenor.html', data=idtreino, listaj=lista_jogador)
 
 @app.route('/addTreino', methods=['GET', 'POST'])
 def page_addTreinos():
