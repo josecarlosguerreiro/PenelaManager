@@ -1,0 +1,75 @@
+{%extends 'base.html' %}
+
+{%block head%}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="table-responsive" style="padding: 40px">
+    <table class="table table-hover">
+
+    <!--Table head-->
+    <thead>
+      <tr>
+        <th>Numero</th>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Posicao</th>
+        <th>Contacto</th>
+        <th>Jogos</th>
+        <th>Jogos Titular</th>
+        <th>Jogos Suplente</th>
+        <th>Minutos Jogados</th>
+        <th>Golos</th>
+      </tr>
+    </thead>
+    <!--Table head-->
+    <!--Table body-->
+    <tbody>
+      {%for jog in data %}
+      <tr>
+          <td>Numero</td>
+          <td>{{ jog[1]}}</td>
+          <td>-</td>
+          <td>{{ jog[5] }}</td>
+          <td>-</td>
+          <td>Jogos</td>
+          <td>Jogos Titular</td>
+          <td>Jogos Suplente</td>
+          <td>Minutos Jogados</td>
+          <td>Golos</td>
+      </tr>
+      {%endfor%}
+
+
+    <!--Table body-->
+
+
+{% endblock %}
+
+<!--
+<div class="container">
+  <h2>Plantel 2018/19</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Posição</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for jog in data %}
+      <tr>
+        <td>{{ jog[1] }}</td>
+        <td>{{ jog[5] }}</td>
+
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+-->
+
+
+

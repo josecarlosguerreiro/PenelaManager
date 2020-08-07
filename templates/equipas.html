@@ -1,0 +1,34 @@
+{%extends 'index.html' %}
+
+{%block head%}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <h2>Equipas 2018/19</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Campo</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for jog in data %}
+      <tr>
+        <td>{{ jog[1] }}</td>
+        <td>{{ jog[2] }}</td>
+
+
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+
+
+{% endblock%}
