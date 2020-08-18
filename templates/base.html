@@ -1,69 +1,61 @@
-<!DOCTYPE html>
-<html lang="pt-PT">
-<head>
-    <title>Grupo Desportivo de Penela - Gestão de Equipa</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <!--
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-    -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome-4.3.0/css/font-awesome.min.css') }}">
-    <!--
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
-    -->
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!DOCTYPE HTML>
 
-	{% block head %}{% endblock%}
+<html>
+	<head>
+		<title>Grupo Desportivo de Penela</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<!-- title font -->
+		<link href='https://fonts.googleapis.com/css?family=Averia Gruesa Libre' rel='stylesheet'>
 
-	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-</head>
-<body>
-<div class="row">
-  <div class="col-sm-2 menu_lateral">
-    <div class="navbar navbar-inverse navbar-fixed-left">
-      <ul class="nav navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/base">Inicio</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Plantel</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="/plantel">Ver plantel</a>
-                  <a class="dropdown-item" href="#">Adicionar Jogador</a>
-                </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown"href="#">Treinos</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="/vertreinos">Ver treinos</a>
-                  <a class="dropdown-item" href="/addTreino">Adicionar Treinos</a>
-                </div>
-          </li>
-            {% if session['username'] %}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Configuracao</a>
-            {% endif %}
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="/changepassword">Alterar Password</a>
-              <a class="dropdown-item" href="/logout">Logout</a>
-            </div>
-          </li>
-        </ul>
-    </div>
-  </div>
-  <div class="col-sm-9">
-      {% block body %}
-      {% endblock%}
-  </div>
-</div>
+		<!--
+		<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+		-->
+		<script src="{{ url_for('static', filename='js/jquery.scrolly.min.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/skel.min.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/util.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/main.js')}}"></script>
 
-</body>
+	</head>
+
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<nav class="left">
+					<a href="#menu"><span>Menu</span></a>
+				</nav>
+				<!--
+				<img src="static/images/PenelaEmblema.jpg" alt="" />
+				-->
+				<a href="#" class="logo">Grupo Desportivo Penela</a>
+				<nav class="right">
+					<a href="#" class="button alt">Log in</a>
+				</nav>
+			</header>
+
+		<!-- Menu -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="/">Home</a></li>
+					<li><a href="generic.html">Generic</a></li>
+					<li><a href="elements.html">Elements</a></li>
+				</ul>
+				<ul class="actions vertical">
+					<li><a href="login.html" class="button fit">Login</a></li>
+				</ul>
+			</nav>
+    {% block body %}
+        {% endblock %}
+
+    </body>
+</html>
+
+
+

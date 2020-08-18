@@ -14,9 +14,9 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-		<!--
+
 		<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
-		-->
+
 		<script src="{{ url_for('static', filename='js/jquery.scrolly.min.js')}}"></script>
 		<script src="{{ url_for('static', filename='js/skel.min.js')}}"></script>
 		<script src="{{ url_for('static', filename='js/util.js')}}"></script>
@@ -35,7 +35,7 @@
 				-->
 				<a href="#" class="logo">Grupo Desportivo Penela</a>
 				<nav class="right">
-					<a href="#" class="button alt">Log in</a>
+					<a href="/login" class="button alt">Log in</a>
 				</nav>
 			</header>
 
@@ -47,7 +47,7 @@
 					<li><a href="elements.html">Elements</a></li>
 				</ul>
 				<ul class="actions vertical">
-					<li><a href="#" class="button fit">Login</a></li>
+					<li><a href="/login" class="button fit">LoginZE</a></li>
 				</ul>
 			</nav>
 
@@ -95,37 +95,37 @@
 
 		<section id="banner">
 						<div class="content">
-							<ul class="actions">
-								<li><a href="#one" class="button f6755e">Grupo Desportivo Penela</a></li>
 								<p>#Raça #Querer #Ambição</p>
-							</ul>
+
 						</div>
+		{% block body %}
+			{% if data[1] is not none and data[3] is not none and data[4] is not none and data[6] is not none:  %}
 		<div class="highlight-event-match">
 				<div class="wrapper">
-					{% block body %}
 
-					<div class="container">
-					  <div class="row justify-content-md-center jogo">
-						<div class="col col-lg-2">
-						  <div class="highlight-event-team-name">{{ data[4] }} </div>
-						</div>
-						<div class="col-md-auto">
-						  <div class="competition-name">16º Campeonato Amador Vale do Cávado - {{ data[1] }} </br>
-								Jornada {{ data[3] }} </br>
-								Campo da {{ data[6] }} - 10h00
+
+							<div class="container">
+							  <div class="row justify-content-md-center jogo">
+								<div class="col col-lg-2">
+								  <div class="highlight-event-team-name">{{ data[4] }} </div>
+								</div>
+								<div class="col-md-auto">
+								  <div class="competition-name">16º Campeonato Amador Vale do Cávado - {{ data[1] }} </br>
+										Jornada {{ data[3] }} </br>
+										Campo da {{ data[6] }} - 10h00
+									  </div>
+								</div>
+								<div class="col col-lg-2">
+								  <div class="highlight-event-team-name">{{ data[5] }} </div>
+								</div>
 							  </div>
-						</div>
-						<div class="col col-lg-2">
-						  <div class="highlight-event-team-name">{{ data[5] }} </div>
-						</div>
-					  </div>
-
-					  </div>
+					  		</div>
+							{% endif %}
 					</div>
-					 {% endblock %}
-				</div>
-		</section>
 
+				</div>
+			{% endblock %}
+		</section>
 
 		<!-- One -->
 			<section id="one" class="wrapper">

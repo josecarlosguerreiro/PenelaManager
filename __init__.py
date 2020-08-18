@@ -257,7 +257,7 @@ def proxjogo():
     cur.execute(query_string)
     data = cur.fetchall()
     dta = data[0]
-    print('data -->', dta)
+    print('proximo jogo data -->', dta)
     return dta
 
 
