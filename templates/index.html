@@ -12,24 +12,9 @@
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <!--
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-    -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome-4.3.0/css/font-awesome.min.css') }}">
-    <!--
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
-    -->
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
 
 
 		<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
@@ -59,17 +44,22 @@
 		<!-- Menu -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Generic</a></li>
-					<li><a href="elements.html">Elements</a></li>
+					<li><a href="/">Home</a></li>
+					<li><a href="/sede">Sede</a></li>
+                    <li><a href="elements.html">Jogos</a></li>
+					<li><a href="elements.html">Calendario</a></li>
 				</ul>
 				<ul class="actions vertical">
-					<li><a href="/login" class="button fit">LoginZE</a></li>
+					<li><a href="/login" class="button fit">Login</a></li>
 				</ul>
 			</nav>
 
 <!--Carousel Wrapper-->
-		<div id="carousel" class="carousel slide" data-ride="carousel">
+
+      <!--
+      Carousel
+      -->
+	<div id="carousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
         <li data-target="#carousel" data-slide-to="1"></li>
@@ -95,6 +85,14 @@
         </div>
       </div>
     </div>
+
+
+
+
+
+      <!--
+      END Carousel
+      -->
 		<section id="banner">
 						<div class="content">
 								<p>#Raça #Querer #Ambição</p>
@@ -135,11 +133,11 @@
 					<div class="flex-item left">
 						<div>
 							<h3><a href="/sede">Sede</a></h3>
-							<p>Morbi in sem quis dui plalorem ipsum<br /> euismod in, pharetra sed ultricies.</p>
+							<p>Informacoes sobre a sede do Grupo Desportivo de Penela e contactos</p>
 						</div>
 						<div>
-							<h3>Direção</h3>
-							<p>Tristique yonve cursus jam nulla quam<br /> loreipsu gravida adipiscing lorem</p>
+							<h3><a href="/sede">Direcao e Palmares</a></h3>
+							<p>Informacoes sobre a sede do Grupo Desportivo de Penela e contactos</p>
 						</div>
 					</div>
 					<div class="flex-item image fit round">
@@ -154,7 +152,7 @@
 							<h3>
 								<a href="/calendario">Calendário</a>
 							</h3>
-							<p>Pellentesque egestas sem. Suspendisse<br /> modo ullamcorper feugiat lorem.</p>
+							<p>Calendario desportivo da epoca 2019/2020 de forma a acompanhar todos os jogos</p>
 						</div>
 					</div>
 				</div>
@@ -185,23 +183,30 @@
 		<section id="two" class="wrapper">
 				<div class="inner flex flex-3">
 						<div>
-							<div class="sponser" style="width: 33%;">
+							<div class="sponser" style="width: 25%;">
 								<a href="https://www.emirates.com" rel="noopener noreferrer" class="div sponser-img" target="_blank">
 									<img class='b-lazy' src="static/images/patrocinadores/SergioRebelo.jpg" width="180" height="126" DisableWebEdit="False" />
 								</a>
 							</div>
 						</div>
 						<div>
-							<div class="sponser" style="width: 33%;">
+							<div class="sponser" style="width: 25%;">
 								<a href="https://www.emirates.com" rel="noopener noreferrer" class="div sponser-img" target="_blank">
 									<img class='b-lazy' src="static/images/patrocinadores/ECOFIRMA.png" width="180" height="126" DisableWebEdit="False" />
 								</a>
 							</div>
 						</div>
 						<div>
-							<div class="sponser" style="width: 33%;">
+							<div class="sponser" style="width: 25%;">
 								<a href="https://www.emirates.com" rel="noopener noreferrer" class="div sponser-img" target="_blank">
-									<img class='b-lazy' src="static/images/patrocinadores/" width="180" height="126" DisableWebEdit="False" />
+									<img class='b-lazy' src="static/images/patrocinadores/LMS.jpg" width="180" height="126" DisableWebEdit="False" />
+								</a>
+							</div>
+						</div>
+						<div>
+							<div class="sponser" style="width: 25%;">
+								<a href="https://www.emirates.com" rel="noopener noreferrer" class="div sponser-img" target="_blank">
+									<img class='b-lazy' src="static/images/patrocinadores/JoaquimTeixeira.JPG" width="180" height="126" DisableWebEdit="False" />
 								</a>
 							</div>
 						</div>
