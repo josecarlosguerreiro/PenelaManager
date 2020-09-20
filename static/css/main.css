@@ -2001,9 +2001,9 @@
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: #f6755e;
-			border-color: #f6755e;
-			color: #ffffff;
+			background: #FFFFFF;
+			border-color: #FFFFFF;
+			color: #1A9900;
 			content: '\f00c';
 		}
 
@@ -2936,6 +2936,7 @@
 		background-position: center top;
 		background-repeat: no-repeat;
 		text-align: center;
+		padding-top: 3em;
 	}
 
 		#banner .content {
@@ -3213,3 +3214,14 @@
 				}
 
 		}
+
+/* Pagina de Treinos */
+
+.pagTreino {
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  padding-bottom: 3em;
+
+}

@@ -1,4 +1,4 @@
-{%extends 'base.html' %}
+{%extends 'baseLogin.html' %}
 
 {%block head%}
 
@@ -6,8 +6,24 @@
 
 {% block body %}
 
+<!-- One -->
+<img src="{{ url_for('static', filename='images/treino.jpeg') }}" class="pagTreino">
+
+<div class="pagTreino">
+    <label for="epoca">Epoca FODASE</label>
+    <select id="epoca" name="Epoca">
+         {% for dt in treino %}
+      <option value="epoca">{{ dt[0].encode("utf-8") }}</option>
+        {% endfor %}
+    </select>
+
+
+
+</div>
+
+<!--
 <div class="addTreino">
-    <img class="addTreino" src="{{ url_for('static', filename='images/treino.jpeg') }}"/>
+    <img class="addTreino"  src="{{ url_for('static', filename='images/treino.jpeg') }}"/>
     <form class="treino_form" method="post">
       <div class="form-row">
         <div class="form-group col-md-4">
@@ -18,12 +34,13 @@
         </div>
       </div>
     </form>
+
     <div class="table-responsive">
         <table class="table table-striped">
           <thead>
             <tr>
               <th scope="col">Epoca</th>
-              <th scope="col">Tipo de Treino</th>jose
+              <th scope="col">Tipo de Treino</th>
               <th scope="col">Metereologia</th>
               <th scope="col">Local</th>
               <th scope="col">Data</th>
@@ -40,7 +57,7 @@
                 <td>
                     <form method="post">
                         <input type="submit" onclick="window.location.href = '/treinocompleto';" name="{{ treino }}" value="treino" href="/treinocompleto"/>
-                        <!-- <input onclick="window.location.href = '/treinocompleto';" type="submit" value="Submit request" /> -->
+                        <input onclick="window.location.href = '/treinocompleto';" type="submit" value="Submit request" />
                     </form>
                 </td>
 
@@ -49,5 +66,6 @@
           </tbody>
         </table>
     </div>
-</div>
+-->
+
 {% endblock%}

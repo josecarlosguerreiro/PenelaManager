@@ -12,8 +12,11 @@
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+		<!--
 		<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+		-->
 		<script src="{{ url_for('static', filename='js/jquery.scrolly.min.js')}}"></script>
 		<script src="{{ url_for('static', filename='js/skel.min.js')}}"></script>
 		<script src="{{ url_for('static', filename='js/util.js')}}"></script>
@@ -24,50 +27,34 @@
 	<body>
 
 		<!-- Header -->
-		 {%block body %}
 			<header id="header">
 				<nav class="left">
 					<a href="#menu"><span>Menu</span></a>
 				</nav>
-				<a class="logo">Grupo Desportivo Penela</a>
+				<!--
+				<img src="static/images/PenelaEmblema.jpg" alt="" />
+				-->
+				<a href="/" class="logo">Grupo Desportivo Penela</a>
 				<nav class="right">
 					<a>Ola {{ user }}</a>
 				</nav>
 			</header>
-		 {% endblock %}
+
 		<!-- Menu -->
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="/">Home</a></li>
-					<li><a href="/plantel">Plantel</a></li>
+					<li><a href="/sede">Sede</a></li>
 					<li><a href="/treinos">Treinos</a></li>
-					<li><a href="/equipas">Adversarios</a></li>
+                    <li><a href="elements.html">Jogos</a></li>
+					<li><a href="elements.html">Calendario</a></li>
+				</ul>
+				<ul class="actions vertical">
+					<li><a href="login.html" class="button fit">Login</a></li>
 				</ul>
 			</nav>
-	   <!-- Fim de Menu -->
-		<section id="one" class="wrapper">
-				<div class="inner flex flex-3">
-					<div class="flex-item right">
-						<div>
-							<h3><a href="/treinos">Treinos</a></h3>
-						</div>
-						<div>
-							<h3><a href="/sede">Plantel</a></h3>
-						</div>
-					</div>
-					<div class="flex-item image fit round">
-						<img src="static/images/PenelaEmblema.jpg" alt="" />
-					</div>
-					<div class="flex-item right">
-						<div>
-							<h3><a href="/plantel">Calendario</a></h3>
-						</div>
-						<div>
-							<h3><a href="/plantel">Equipas</a></h3>
-						</div>
-					</div>
-				</div>
-			</section>
+    {% block body %}
+        {% endblock %}
 
     </body>
 </html>

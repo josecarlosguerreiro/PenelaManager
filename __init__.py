@@ -14,14 +14,28 @@ def home():
     return render_template('index.html', data=data)
 
 
-@app.route('/base', methods=['GET', 'POST'])
+@app.route('/admin')
+def admin():
+    return render_template('login.html')
+
+
+@app.route('/base', methods=['GET'])
 def base():
-    is_user_loggedin = session['username']
-    data = proxjogo()
-    if is_user_loggedin:
-        return render_template("base.html", msg=data)
+    user = session['username']
+    if user:
+        return render_template("base.html", user=user)
     else:
-        return redirect('/', msg=data)
+        return redirect('/', msg=None)
+
+
+
+@app.route('/baseLogin', methods=['GET'])
+def baseLogin():
+    user = session['username']
+    if user:
+        return render_template("baseLogin.html", user=user)
+    else:
+        return redirect('/', msg=None)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -166,14 +180,21 @@ def page_equipas():
     return render_template('equipas.html', data=data)
 
 
-@app.route('/vertreinos', methods=['GET', 'POST'])
+@app.route('/vertreinos', methods=['GET'])
+def page_treino():
+    return render_template('Treino.html')
+
+@app.route('/treinos', methods=['GET'])
 def page_vertreino():
     cnx = connection()
-    cursor = cnx.cursor()
-    query_string = "select * from view_vertreinos"
-    cursor.execute(query_string)
-    data = cursor.fetchall()
-
+    treino = cnx.cursor()
+    epocaquery = "select distinct(epoca) from view_vertreinos"
+    treino.execute(epocaquery)
+    epoca = treino.fetchall()
+    for dt in epoca:
+        print("EPOCA ---> " + str(dt))
+    return render_template('verTreinoPromenor.html', treino=epoca)
+"""
     if request.method == "POST":
         treino = request.form.to_dict(flat=False)
         treino = treino.keys()
@@ -190,7 +211,10 @@ def page_vertreino():
         print("Checkbox test: {phase} | {rphase}")
         return render_template('verTreinoPromenor.html', data=treinos, listaj=lista_jogador)
     else:
-        return render_template('verTreino.html', data=data)
+        for dt in data:
+            print("TESTE -->" + str(dt[0]))
+        return render_template('verTreinoPromenor.html', data=data)
+"""
 
 
 @app.route('/treinocompleto', methods=['GET', 'POST'])
